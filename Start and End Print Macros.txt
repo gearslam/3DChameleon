@@ -29,7 +29,7 @@ gcode:
     G90                      ; Set absolute positioning
     G1 X317 Y300             ; Present
     EXTRUDER_UNLOAD          ; Remove filament from extruder
-	M104 S0                  ; Turn off hotend heater
+    M104 S0                  ; Turn off hotend heater
     TOOL_SELECT TOOL={TOOL}
     CHAMELEON_UNLOAD         ; Backout filament to top of spliter
     TOOL_FREE TOOL={TOOL}
