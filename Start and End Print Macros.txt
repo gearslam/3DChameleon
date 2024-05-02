@@ -15,7 +15,7 @@ gcode:
     M190 S{BED_TEMP}         # Wait for bed to reach temperature
     M104 S{EXTRUDER_TEMP}    # Start heating nozzle while Homing
     G28                      # Home all axes
-    G1 Z3.0 X318 F10000.0    # Move print head to purge bucket
+    G1 Z3.0 X318 F20000.0    # Move print head to purge bucket
     M109 S{EXTRUDER_TEMP}    # Set and wait for nozzle to reach temperature
     SET_FILAMENT_SENSOR SENSOR=filament_sensor ENABLE=0    # Disable filament sensor for 3D Chameleon
 
@@ -27,7 +27,7 @@ gcode:
     G91                      # Set incremental positioning
     G1 Z10                   # Raise nozzle
     G90                      # Set absolute positioning
-    G1 X318 Y300 F8000       # Present
+    G1 X318 Y300 F10000      # Present
     EXTRUDER_UNLOAD          # Remove filament from extruder
     M104 S0                  # Turn off hotend heater
     TOOL_SELECT TOOL={TOOL}  # Select current tool
