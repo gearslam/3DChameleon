@@ -17,7 +17,7 @@ gcode:
     G28                      # Home all axes
     G1 Z3.0 X318 F10000.0    # Move print head to purge bucket
     M109 S{EXTRUDER_TEMP}    # Set and wait for nozzle to reach temperature
-    SET_FILAMENT_SENSOR SENSOR=filament_sensor ENABLE=0    ;Disable filament sensor for 3D Chameleon
+    SET_FILAMENT_SENSOR SENSOR=filament_sensor ENABLE=0    # Disable filament sensor for 3D Chameleon
 
 [gcode_macro END_PRINT]
 gcode:
@@ -34,3 +34,4 @@ gcode:
     CHAMELEON_UNLOAD         # Backout filament to top of spliter
     TOOL_FREE TOOL={TOOL}    # Free current tool
     M84                      # Turn off stepper motors
+    SET_FILAMENT_SENSOR SENSOR=filament_sensor ENABLE=1    # Re-enable filament sensor
