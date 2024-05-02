@@ -8,29 +8,29 @@ variable_parameter_BED_TEMP: 60
 gcode:
     # preheat, homing, etc
     BED_MESH_PROFILE LOAD="default"
-    M140 S{BED_TEMP}         ; Start bed heating
-    G90                      ; Set Absolute Position
-    G92 E0                   ; Reset Extruder
-    TOOL_INIT                ; Home 3d chameleon
-    M190 S{BED_TEMP}         ; Wait for bed to reach temperature
-    M104 S{EXTRUDER_TEMP}    ; Start Heating Nozzle while Homing
-    G28                      ; Home all axes
-    G1 Z3.0 X318 F10000.0    ; Move print head to purge bucket
-    M109 S{EXTRUDER_TEMP}    ; Set and wait for nozzle to reach temperature
+    M140 S{BED_TEMP}         # Start bed heating
+    G90                      # Set Absolute Position
+    G92 E0                   # Reset Extruder
+    TOOL_INIT                # Home 3d chameleon
+    M190 S{BED_TEMP}         # Wait for bed to reach temperature
+    M104 S{EXTRUDER_TEMP}    # Start Heating Nozzle while Homing
+    G28                      # Home all axes
+    G1 Z3.0 X318 F10000.0    # Move print head to purge bucket
+    M109 S{EXTRUDER_TEMP}    # Set and wait for nozzle to reach temperature
     SET_FILAMENT_SENSOR SENSOR=filament_sensor ENABLE=0    ;Disable Filament Sensor for 3D Chameleon
 
 [gcode_macro END_PRINT]
 gcode:
     {% set TOOL= printer["gcode_macro TOOL_INIT"].tool %}
-    M140 S0                  ; Turn off bed heater
-    M106 S0                  ; turn off cooling fans
-    G91                      ; Set Incremental Positioning
-    G1 Z10                   ; Raise Nozzle
-    G90                      ; Set absolute positioning
-    G1 X318 Y300 F8000       ; Present
-    EXTRUDER_UNLOAD          ; Remove filament from extruder
-    M104 S0                  ; Turn off hotend heater
-    TOOL_SELECT TOOL={TOOL}
-    CHAMELEON_UNLOAD         ; Backout filament to top of spliter
-    TOOL_FREE TOOL={TOOL}
-    M84                      ; Turn off stepper motors
+    M140 S0                  # Turn off bed heater
+    M106 S0                  # turn off cooling fans
+    G91                      # Set Incremental Positioning
+    G1 Z10                   # Raise Nozzle
+    G90                      # Set absolute positioning
+    G1 X318 Y300 F8000       # Present
+    EXTRUDER_UNLOAD          # Remove filament from extruder
+    M104 S0                  # Turn off hotend heater
+    TOOL_SELECT TOOL={TOOL}  # Select current tool
+    CHAMELEON_UNLOAD         # Backout filament to top of spliter
+    TOOL_FREE TOOL={TOOL}    # Free current tool
+    M84                      # Turn off stepper motors
