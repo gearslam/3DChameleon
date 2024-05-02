@@ -27,7 +27,7 @@ gcode:
     G91                      ; Set Incremental Positioning
     G1 Z10                   ; Raise Nozzle
     G90                      ; Set absolute positioning
-    G1 X317 Y300 F4000       ; Present
+    G1 X317 Y300 F6000       ; Present
     EXTRUDER_UNLOAD          ; Remove filament from extruder
     M104 S0                  ; Turn off hotend heater
     TOOL_SELECT TOOL={TOOL}
