@@ -13,3 +13,5 @@ For K1 or volcano nozzle purge wipe bucket needs to be trimmed down about 6mm us
 PrusaSlicer Start G-code:
 START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]} BED_TEMP={first_layer_bed_temperature[0]}
 T{initial_tool}
+
+Filament Change withe Purge and Wipe is 17 seconds.
