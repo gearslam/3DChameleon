@@ -33,4 +33,4 @@ gcode:
     TOOL_SELECT TOOL={TOOL}
     CHAMELEON_UNLOAD         ; Backout filament to top of spliter
     TOOL_FREE TOOL={TOOL}
-    M84                      ; Turn of stepper motors
+    M84                      ; Turn off stepper motors
