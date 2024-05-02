@@ -28,8 +28,8 @@ gcode:
     G1 Z10                   # Raise nozzle
     G90                      # Set absolute positioning
     G1 X318 Y300 F10000      # Present
-    EXTRUDER_UNLOAD          # Remove filament from extruder
     M104 S0                  # Turn off hotend heater
+    EXTRUDER_UNLOAD          # Remove filament from extruder
     TOOL_SELECT TOOL={TOOL}  # Select current tool
     CHAMELEON_UNLOAD         # Backout filament to top of spliter
     TOOL_FREE TOOL={TOOL}    # Free current tool
