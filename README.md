@@ -14,4 +14,4 @@ PrusaSlicer Start G-code:
 START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]} BED_TEMP={first_layer_bed_temperature[0]}
 T{initial_tool}
 
-Filament Change withe Purge and Wipe is 17 seconds.
+Filament Change withe Purge and Wipe is 15 seconds.
