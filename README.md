@@ -14,4 +14,4 @@ PrusaSlicer Start G-code:
 START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]} BED_TEMP={first_layer_bed_temperature[0]}
 T{initial_tool}  ;only needed for PrusaSlicer, Orca Slicer, uncheck Manual Filament Change.
 
-Filament Change with Purge and Wipe is 15 seconds.
+Filament Change with purge and wipe just under 7 seconds.
